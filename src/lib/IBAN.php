@@ -293,7 +293,7 @@ class IBAN
         $numericAccountIdentification = $this->getNumericAccountIdentification($accountIdentification);
         $invertedIban = $numericAccountIdentification . $numericCountryCode . $checksum;
 
-        return $this->bcmod($invertedIban, 97) === '1';
+        return $this->bcmod($invertedIban, 97) == "1";
     }
 
     /**
